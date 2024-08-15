@@ -6,8 +6,6 @@ This is a companion repository to the ["codeLive: Exploring the Models API (Beta
 
 ## Using this repository
 
-To use this repository:
-
 1. Create a Custom Einstein AI Playground using the link in the [Get Started with Prompt Builder](https://trailhead.salesforce.com/content/learn/projects/quick-start-prompt-builder/get-started-with-prompt-builder) Trailhead module.
 2. Turn on [Einstein Generative AI](https://help.salesforce.com/s/articleView?id=sf.generative_ai_enable.htm&type=5).
 3. Clone and pull down this repository.
