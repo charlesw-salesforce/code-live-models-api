@@ -1,6 +1,6 @@
 # Exploring the Models API
 
-This is a companion repository the ["codeLive: Exploring the Models API (Beta)" livestream](https://www.youtube.com/watch?v=hf95_ghGeNI), which aired on August 15th, 2024. It demonstrates how to build and deploy a general-purpose chatbot that supports multiple models, including OpenAI GPT-4o and Anthropic's Claude Haiku.
+This is a companion repository to the ["codeLive: Exploring the Models API (Beta)" livestream](https://www.youtube.com/watch?v=hf95_ghGeNI), which aired on August 15, 2024. It shows how to build and deploy a chatbot that supports multiple models, including OpenAI GPT-4o and Anthropic's Claude Haiku.
 
 ![Demo of the Gen AI Chat App being used to ask who won the 2004 NBA Championship.](/demo.gif)
 
@@ -19,4 +19,7 @@ To use this repository:
 ## Resources
 
 - [Models API Developer Guide](https://developer.salesforce.com/docs/einstein/genai/guide/models-api.html)
+- [Access Models API with REST](https://developer.salesforce.com/docs/einstein/genai/guide/access-models-api-with-rest.html)
+- [Access Models API with Apex](https://developer.salesforce.com/docs/einstein/genai/guide/access-models-api-with-apex.html)
 - [Models API Postman Collection](https://www.postman.com/salesforce-developers/salesforce-developers/collection/onih7sc/models-apis-beta)
+- [Activate Einstein Generative AI](https://help.salesforce.com/s/articleView?id=sf.generative_ai_enable.htm&type=5)
