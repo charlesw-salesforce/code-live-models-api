@@ -1,0 +1,27 @@
+.loading-dots {
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    font-size: 24px;
+}
+
+.loading-dots span {
+    animation: blink 1s infinite;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}

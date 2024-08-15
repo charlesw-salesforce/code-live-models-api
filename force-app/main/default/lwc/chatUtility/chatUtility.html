@@ -1,0 +1,87 @@
+<template>
+    <div class="slds-card" data-id="chat-app-container">
+        <div class="slds-card__header">
+            <header class="slds-media slds-media_center">
+                <div class="slds-media__body">
+                    <lightning-combobox
+                        variant="label-hidden"
+                        name="model"
+                        label="Select model"
+                        value={selectedModel}
+                        options={modelOptions}
+                        onchange={handleModelChange}
+                    >
+                    </lightning-combobox>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <section class="slds-scrollable_y" style="height: 482px;" id="chat-window">
+                <ul class="slds-chat-list">
+                    <template for:each={chatLog} for:item="chat">
+                        <template lwc:if={chat.isUser}>
+                            <li key={chat.id} class="slds-chat-listitem slds-chat-listitem_outbound">
+                                <div class="slds-chat-message">
+                                    <div class="slds-chat-message__body">
+                                        <div class="slds-chat-message__text slds-chat-message__text_outbound">
+                                            <span>{chat.message}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                        <template lwc:else>
+                            <li key={chat.id} class="slds-chat-listitem slds-chat-listitem_inbound">
+                                <div class="slds-chat-message">
+                                    <div class="slds-chat-message__body">
+                                        <div class="slds-chat-message__text slds-chat-message__text_inbound">
+                                            <span>{chat.message}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </template>
+                    <template if:true={isLoading}>
+                        <div class="loading-dots">
+                            <span>.</span><span>.</span><span>.</span>
+                        </div>
+                    </template>
+                </ul>
+            </section>
+        </div>
+        <footer class="slds-card__footer">
+            <div class="slds-grid slds-grid_vertical">
+                <div class=" slds-m-bottom_x-small">
+                    <lightning-textarea 
+                        type="text"
+                        label="Type your message"
+                        variant="label-hidden" 
+                        placeholder="Type your message"
+                        value={userInput}
+                        onchange={handleInputChange}
+                        onkeypress={handleEnter}
+                        disabled={isLoading}
+                    ></lightning-textarea>
+                </div>
+                <div class="slds-grid slds-text-align_left">
+                    <div>
+                        <lightning-button 
+                            label="Send"
+                            onclick={handleSendMessage}
+                            variant="brand"
+                            disabled={isLoading} 
+                        ></lightning-button>
+                    </div>
+                    <div class="slds-col_bump-left">
+                        <lightning-button 
+                            label="Clear chat"
+                            onclick={handleClearChat}
+                            variant="destructive-text"
+                        ></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</template>
